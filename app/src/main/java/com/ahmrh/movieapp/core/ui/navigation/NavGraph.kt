@@ -11,17 +11,43 @@ import com.ahmrh.movieapp.feature.movie.ui.screen.home.HomeScreen
 fun NavGraph(
     navController: NavHostController
 ) {
+
+    val navigateToHome: () -> Unit = {
+        navController.navigate(Destination.Home.route){
+            popUpTo(Destination.Home.route){ inclusive = true }
+        }
+    }
+    val navigateToExplore: () -> Unit = {
+        navController.navigate(Destination.Explore.route){
+            popUpTo(Destination.Explore.route){ inclusive = true }
+        }
+    }
+
+    val navigateToMovie: (Int) -> Unit = { movieId ->
+        navController.navigate(Destination.Movie.createRoute(movieId))
+    }
+
+    val navigateToReview: (Int) -> Unit = { movieId ->
+        navController.navigate(Destination.Review.createRoute(movieId))
+    }
+
+    val navigateBack: () -> Unit = {
+        navController.navigateUp()
+    }
+
     NavHost(navController = navController, startDestination = Destination.Home.route){
 
         /*
         * "Delete the navigation of each feature before deleting one of the feature directory"
-        * - ahmrh
         * */
 
 
         // movie
         composable(Destination.Home.route){
-            HomeScreen(navController)
+            HomeScreen(
+                navigateToExplore = navigateToExplore,
+                navigateToMovie = navigateToMovie
+            )
         }
         composable(Destination.Explore.route){
             ExploreScreen(navController)
@@ -31,7 +57,7 @@ fun NavGraph(
         }
 
         composable(Destination.Movie.route) { backStackEntry ->
-            val movieId = backStackEntry.arguments?.getInt("movieId") ?: return@composable
+            val movieId = backStackEntry.arguments?.getInt("movieId")  ?: return@composable
 
 
         }

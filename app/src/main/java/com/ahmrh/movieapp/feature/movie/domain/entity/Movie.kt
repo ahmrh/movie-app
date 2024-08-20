@@ -1,3 +1,5 @@
 package com.ahmrh.movieapp.feature.movie.domain.entity
 
-data class Movie()
+data class Movie(
+    val id: Int,
+)
