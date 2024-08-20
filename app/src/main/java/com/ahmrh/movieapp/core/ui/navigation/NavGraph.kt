@@ -50,7 +50,10 @@ fun NavGraph(
             )
         }
         composable(Destination.Explore.route){
-            ExploreScreen(navController)
+            ExploreScreen(
+                navigateToHome = navigateToHome,
+                navigateToMovie = navigateToMovie,
+            )
         }
         composable(Destination.Bookmark.route){
 

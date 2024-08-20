@@ -18,12 +18,18 @@ data class Movie(
             1,
             "Placeholder Movie",
             7.5,
-            listOf(Genre.PLACEHOLDER_GENRE),
+            listOf(
+                Genre.PLACEHOLDER_GENRE,
+                Genre.PLACEHOLDER_GENRE,
+                Genre.PLACEHOLDER_GENRE
+            ),
             "https://example.com/placeholder.jpg",
             "This is a placeholder overview.",
             120,
             "English",
             listOf(
+                Review.PLACEHOLDER_REVIEW,
+                Review.PLACEHOLDER_REVIEW,
                 Review.PLACEHOLDER_REVIEW
             )
         )
