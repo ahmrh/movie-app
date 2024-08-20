@@ -5,18 +5,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.ahmrh.movieapp.core.ui.theme.MovieAppTheme
 
 @Composable
-fun HorizontalMovieItem(
-
-){
-
+fun VerticalMovieListItem() {
 
 
 }
 
 @Composable
 @Preview(showBackground = true)
-fun HorizontalMovieItemPreview() {
+fun VerticalMovieListItemPreview() {
     MovieAppTheme {
-        HorizontalMovieItem()
+        VerticalMovieListItem()
     }
 }
