@@ -75,11 +75,11 @@ fun VerticalMovieListItem(
         Spacer(modifier = Modifier.width(16.dp))
 
         Column(
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ){
             Text(
                 movie.title, style = MaterialTheme.typography.titleMedium,
                 maxLines = 2, overflow = TextOverflow.Ellipsis,
-                modifier = Modifier.height(48.dp)
             )
 
             Row{

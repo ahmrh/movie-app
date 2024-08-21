@@ -71,7 +71,7 @@ fun HorizontalMovieListItem(
         Text(
             movie.title, style = MaterialTheme.typography.titleMedium,
             maxLines = 2, overflow = TextOverflow.Ellipsis,
-            modifier = Modifier.height(48.dp))
+        )
         Spacer(modifier = Modifier.height(16.dp))
 
         Row {

@@ -36,7 +36,7 @@ fun NavGraph(
         navController.navigateUp()
     }
 
-    NavHost(navController = navController, startDestination = Destination.Movie.createRoute(533535)){
+    NavHost(navController = navController, startDestination = Destination.Home.route){
 
         /*
         * "Delete the navigation of each feature before deleting one of the feature directory"
