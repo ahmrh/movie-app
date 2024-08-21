@@ -48,13 +48,6 @@ fun ExploreScreen(
 ){
 
     Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text("Explore movies", style = MaterialTheme.typography.headlineSmall)
-                }
-            )
-        },
         bottomBar = {
             NavBar(
                 onHomeNavigation = navigateToHome,
@@ -64,49 +57,29 @@ fun ExploreScreen(
     ) { innerPadding ->
 
         val listState = rememberLazyListState()
+        Column(
+            modifier = Modifier
+                .padding(innerPadding)
+                .padding(16.dp)
+        ) {
+            Text("Explore Movies", style = MaterialTheme.typography.titleMedium)
+            Spacer(modifier = Modifier.height(16.dp))
 
-        Row(
-            modifier = Modifier.padding(horizontal = 16.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ){
             LazyColumn(
                 modifier = Modifier.weight(1f),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 items(10){
-                    GenreButton(genre = Genre.PLACEHOLDER_GENRE)
-                }
+                    Row{
 
-            }
-            LazyColumn (
-                modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ){
-                items(10){
-                    GenreButton(genre = Genre.PLACEHOLDER_GENRE)
+                        GenreButton(genre = Genre.PLACEHOLDER_GENRE, modifier = Modifier.weight(1f))
+                        GenreButton(genre = Genre.PLACEHOLDER_GENRE, modifier = Modifier.weight(1f))
+                    }
                 }
             }
         }
 
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
-        ){
 
-            LazyColumn(
-                modifier = Modifier
-                    .padding(horizontal = 16.dp),
-                state = listState
-            ){
-
-
-
-
-
-
-            }
-        }
 
     }
 

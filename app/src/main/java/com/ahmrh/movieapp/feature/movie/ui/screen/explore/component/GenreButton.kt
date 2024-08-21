@@ -22,7 +22,6 @@ fun GenreButton(
         onClick = {},
         modifier = modifier
             .height(70.dp)
-            .fillMaxWidth()
     ) {
         Text(genre.name,
             modifier = Modifier.fillMaxWidth())

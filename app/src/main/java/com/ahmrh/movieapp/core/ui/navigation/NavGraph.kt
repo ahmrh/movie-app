@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.ahmrh.movieapp.feature.movie.ui.screen.detail.DetailScreen
 import com.ahmrh.movieapp.feature.movie.ui.screen.explore.ExploreScreen
 import com.ahmrh.movieapp.feature.movie.ui.screen.home.HomeScreen
 
@@ -35,7 +36,7 @@ fun NavGraph(
         navController.navigateUp()
     }
 
-    NavHost(navController = navController, startDestination = Destination.Home.route){
+    NavHost(navController = navController, startDestination = Destination.Movie.createRoute(533535)){
 
         /*
         * "Delete the navigation of each feature before deleting one of the feature directory"
@@ -60,12 +61,14 @@ fun NavGraph(
         }
 
         composable(Destination.Movie.route) { backStackEntry ->
-            val movieId = backStackEntry.arguments?.getInt("movieId")  ?: return@composable
+            val movieId = backStackEntry.arguments?.getInt("movieId")
+
+            DetailScreen(movieId = 533535)
 
 
         }
         composable(Destination.Review.route) { backStackEntry ->
-            val movieId = backStackEntry.arguments?.getInt("movieId") ?: return@composable
+            val movieId = backStackEntry.arguments?.getInt("movieId")
 
         }
 

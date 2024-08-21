@@ -37,7 +37,9 @@ fun NavBar(
             },
             label = { Text("Home") },
             selected = currentDestination == Destination.Home,
-            onClick = onHomeNavigation
+            onClick = {
+                onHomeNavigation()
+            }
         )
 
         NavigationBarItem(
@@ -52,7 +54,9 @@ fun NavBar(
             },
             label = { Text("Explore") },
             selected = currentDestination == Destination.Explore,
-            onClick = onHomeNavigation
+            onClick = {
+                onExploreNavigation()
+            }
         )
 
         NavigationBarItem(
@@ -67,7 +71,9 @@ fun NavBar(
             },
             label = { Text("Bookmark") },
             selected = currentDestination == Destination.Bookmark,
-            onClick = onHomeNavigation
+            onClick = {
+                onBookmarkNavigation()
+            }
         )
     }
 
