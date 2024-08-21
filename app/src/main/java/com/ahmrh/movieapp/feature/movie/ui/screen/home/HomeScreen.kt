@@ -28,6 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.ahmrh.movieapp.core.ui.navigation.Destination
 import com.ahmrh.movieapp.core.ui.theme.MovieAppTheme
 import com.ahmrh.movieapp.feature.movie.domain.entity.Movie
@@ -42,7 +43,8 @@ import kotlinx.coroutines.launch
 fun HomeScreen(
     navigateToMovie: (Int) -> Unit = {},
     navigateToExplore: () -> Unit = {},
-    navigateToBookmark: () -> Unit = {}
+    navigateToBookmark: () -> Unit = {},
+    homeViewModel: HomeViewModel = hiltViewModel()
 
 ){
     Scaffold(
